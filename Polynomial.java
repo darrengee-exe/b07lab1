@@ -2,18 +2,13 @@ import java.lang.Math;
 
 public class Polynomial {
 
-	// one field 
-	double coefficients[]; // array declaration, only a reference to an array is created 
+	double coefficients[];  
 	
-	// constructors
 	public Polynomial() {
-		// set polynomial coefficients to 0
-		coefficients = new double[1]; // array instantiation, memory is allocated to the array
+		coefficients = new double[1]; 
 	}
 
 	public Polynomial(double coefficients[]) {
-		// set polynomial coefficients
-
 		this.coefficients = new double[coefficients.length];
 
 		for(int i = 0; i < coefficients.length ; i++) {
@@ -22,9 +17,7 @@ public class Polynomial {
 	}
 
 	public Polynomial add(Polynomial p) {
-		// add two polynomials
-
-		int newSize = Math.max(this.coefficients.length, p.coefficients.length); // size of new coefficient array
+		int newSize = Math.max(this.coefficients.length, p.coefficients.length); 
 		double newCoefficients[] = new double[newSize];
 
 		for(int i = 0; i < newSize; i++) {
@@ -43,8 +36,6 @@ public class Polynomial {
 	}
 
 	public double evaluate(double x) {
-		// evaluate the polynomial with given x
-
 		double result = 0;
 		
 		for(int i = 0; i < this.coefficients.length; i++) {
@@ -54,8 +45,6 @@ public class Polynomial {
 	}
 
 	public boolean hasRoot(double x) {
-		// returns whether or not x is a root of Polynomial
-
 		boolean isRoot = false;
 		double result = evaluate(x);
 
